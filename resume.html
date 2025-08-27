@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+   *{
+    margin: 0;
+    padding: 0;
+   }
+.resume-section {
+  padding: 80px 20px;
+  text-align: center;
+  background:#0f3b4c;
+}
+
+.resume-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.resume-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.resume-btn:hover {
+    background: linear-gradient(135deg, #0575e6, #00f260);
+  color: black;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.8);
+}
+
+.resume-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .resume-section {
+    padding: 40px 10px;
+  }
+
+  .resume-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .resume-section p {
+    font-size: 0.95rem;
+  }
+
+  .resume-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .resume-section {
+    padding: 60px 20px;
+  }
+
+  .resume-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .resume-section p {
+    font-size: 1rem;
+  }
+
+  .resume-btn {
+    padding: 9px 16px;
+    font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .resume-section {
+    padding: 80px 20px;
+  }
+
+  .resume-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .resume-section p {
+    font-size: 1.1rem;
+  }
+
+  .resume-btn {
+    padding: 10px 18px;
+    font-size: 1.05rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+<!-- ================= Resume Section ================= -->
+<section id="resume" class="resume-section">
+  <h2>My Resume</h2>
+  <p>Click below to view or download my resume.</p>
+
+  <!-- Resume Button -->
+  <a href="ShivamCV-2.pdf" target="_blank" class="resume-btn">View Resume</a>
+
+  <!-- OR directly embed the PDF -->
+  <div class="resume-container">
+    <iframe src="ShivamCV-2.pdf" width="80%" height="600px"></iframe>
+  </div>
+</section>
+</body>
+
+</html>
