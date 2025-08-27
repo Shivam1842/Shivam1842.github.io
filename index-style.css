@@ -207,7 +207,7 @@ nav ul li a:hover {
 }
 @media (max-width:600px){
   .contact{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -283,4 +283,5 @@ nav ul li a:hover {
   .image-3d {
     width: 400px;
   }
+
 }
