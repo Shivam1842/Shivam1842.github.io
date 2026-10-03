@@ -9,6 +9,8 @@ import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
 import Resume from './Resume.jsx'
 import './App.css'
 
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE'
+
 const navigation = [
 	['Home', 'home'], ['About', 'about'], ['Skills', 'skills'], ['Projects', 'projects'],
 	['Resume', 'resume'], ['Contact', 'contact'],
@@ -157,8 +159,8 @@ function AboutSection() {
 				<motion.div className="portrait-stage" initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.65 }}>
 					<div className="portrait-frame">
 						<div className="portrait-surface">
+							<img className="absolute inset-0 z-0 h-full w-full rounded-xl object-cover object-center" src="/profile.jpeg" alt="Portrait of Shivam Kumar Singh" />
 							<div className="portrait-sun" /><div className="portrait-grid" />
-							<div className="portrait-person"><div className="portrait-head" /><div className="portrait-neck" /><div className="portrait-shoulders" /></div>
 							<span className="portrait-initials">SK<span>.</span></span>
 							<span className="portrait-caption">BENGALURU · INDIA</span>
 						</div>
@@ -248,14 +250,43 @@ function ResumeSection() {
 }
 
 function ContactSection() {
-	const [sent, setSent] = useState(false)
-	const handleSubmit = (event) => {
+	const [formValues, setFormValues] = useState({ name: '', email: '', message: '' })
+	const [submissionState, setSubmissionState] = useState('idle')
+
+	const handleInputChange = (event) => {
+		const { name, value } = event.target
+		setFormValues((currentValues) => ({ ...currentValues, [name]: value }))
+		if (submissionState !== 'submitting') setSubmissionState('idle')
+	}
+
+	const handleSubmit = async (event) => {
 		event.preventDefault()
-		const formData = new FormData(event.currentTarget)
-		const subject = encodeURIComponent(`Portfolio enquiry from ${formData.get('name')}`)
-		const body = encodeURIComponent(`${formData.get('message')}\n\nReply to: ${formData.get('email')}`)
-		setSent(true)
-		window.location.href = `mailto:shivam231806@gmail.com?subject=${subject}&body=${body}`
+		if (submissionState === 'submitting') return
+
+		setSubmissionState('submitting')
+		try {
+			const response = await fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify({
+					access_key: WEB3FORMS_ACCESS_KEY,
+					...formValues,
+				}),
+			})
+			const data = await response.json()
+			if (!response.ok || data.success !== true) {
+				throw new Error(data.message || `Web3Forms request failed (${response.status})`)
+			}
+
+			setFormValues({ name: '', email: '', message: '' })
+			setSubmissionState('success')
+		} catch (error) {
+			console.log('Web3Forms submission failed:', error)
+			setSubmissionState('error')
+		}
 	}
 
 	return (
@@ -269,9 +300,11 @@ function ContactSection() {
 			</div>
 			<SocialLinks className="contact-socials" />
 			<form className="contact-form bg-slate-50 border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/10 dark:shadow-none p-4" onSubmit={handleSubmit}>
-				<div className="form-row"><label className="text-slate-700 dark:text-zinc-400">Your name<input name="name" type="text" placeholder="Jane Smith" autoComplete="name" required /></label><label className="text-slate-700 dark:text-zinc-400">Email address<input name="email" type="email" placeholder="jane@company.com" autoComplete="email" required /></label></div>
-				<label className="text-slate-700 dark:text-zinc-400">What’s on your mind?<textarea name="message" placeholder="Tell me a little about it..." rows="3" required /></label>
-				<button className="button button-primary send-button bg-gradient-to-r from-blue-700 to-purple-700 text-white dark:from-blue-400 dark:to-purple-500" type="submit">{sent ? 'Opening your email app' : 'Send Message'} {sent ? <Check size={15} /> : <Send size={15} />}</button>
+				<div className="form-row"><label className="text-slate-700 dark:text-zinc-400">Your name<input name="name" type="text" placeholder="Jane Smith" autoComplete="name" value={formValues.name} onChange={handleInputChange} required /></label><label className="text-slate-700 dark:text-zinc-400">Email address<input name="email" type="email" placeholder="jane@company.com" autoComplete="email" value={formValues.email} onChange={handleInputChange} required /></label></div>
+				<label className="text-slate-700 dark:text-zinc-400">What’s on your mind?<textarea name="message" placeholder="Tell me a little about it..." rows="3" value={formValues.message} onChange={handleInputChange} required /></label>
+				<button className="button button-primary send-button bg-gradient-to-r from-blue-700 to-purple-700 text-white dark:from-blue-400 dark:to-purple-500 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={submissionState === 'submitting'}>{submissionState === 'submitting' ? 'Sending...' : 'Send Message'} {submissionState === 'success' ? <Check size={15} /> : <Send size={15} />}</button>
+				{submissionState === 'success' && <p className="text-sm text-emerald-700 dark:text-emerald-300" role="status" aria-live="polite">Message sent successfully!</p>}
+				{submissionState === 'error' && <p className="text-xs text-slate-600 dark:text-zinc-400" role="alert">Unable to send your message. Please try again.</p>}
 			</form>
 			<div className="paper-plane anti-gravity" aria-hidden="true"><span className="plane-trail" /><Send size={38} /></div>
 		</div>
