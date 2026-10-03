@@ -222,10 +222,10 @@ function ProjectsSection() {
 				<div className="section-topline"><SectionHeading eyebrow="SELECTED WORK" note="Small steps, real problems, and a lot learned along the way.">Things I’ve built</SectionHeading><span className="projects-total text-slate-700 dark:text-zinc-400">04 <i /> PROJECTS</span></div>
 				<div className="projects-grid">
 					{projects.map(({ title, description, icon: Icon, tags }, index) => (
-						<motion.article className="project-card glass-panel bg-slate-50 border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/10 dark:shadow-none" key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.5, delay: index * 0.07 }}>
+						<motion.article className="project-card relative rounded-xl border p-6 transition-all duration-300 group bg-white border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 dark:bg-slate-800/40 dark:border-white/10 dark:backdrop-blur-sm hover:dark:bg-slate-800/60 hover:dark:border-white/20 dark:shadow-none" key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.5, delay: index * 0.07 }}>
 							<div className="project-card-head"><span className="project-icon"><Icon size={20} /></span><span className="project-id text-slate-700 dark:text-zinc-400">PROJECT / 0{index + 1}</span><a className="project-arrow" href="#contact" aria-label={`Ask about ${title}`}><ArrowRight size={17} /></a></div>
 							<h3 className="font-display text-slate-900 dark:text-white">{title}</h3><p className="text-slate-700 dark:text-zinc-400">{description}</p>
-							<div className="project-tags">{tags.map((tag) => <span className="text-slate-700 dark:text-zinc-400" key={tag}>{tag}</span>)}</div>
+							<div className="project-tags">{tags.map((tag) => <span className="bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-zinc-300" key={tag}>{tag}</span>)}</div>
 							<div className="project-card-line" />
 						</motion.article>
 					))}

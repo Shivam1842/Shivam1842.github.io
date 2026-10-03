@@ -1,0 +1,65 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2588 >>
+stream
+BT /F2 25 Tf 0.08 0.13 0.22 rg 54 746 Td (Shivam Kumar Singh) Tj ET
+BT /F1 9.5 Tf 0.24 0.38 0.78 rg 54 721 Td (shivam231806@gmail.com  |  +91 7601890338) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 707 Td (github.com/Shivam1842  |  linkedin.com/in/shivam-singh-it) Tj ET
+0.24 0.38 0.78 RG 1.2 w 54 705 m 558 705 l S
+BT /F2 12 Tf 0.12 0.20 0.34 rg 54 693 Td (OBJECTIVE) Tj ET
+0.24 0.38 0.78 RG 0.8 w 54 686 m 558 686 l S
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 670 Td (Driven IT professional and Frontend Developer specializing in building responsive, modern web user) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 657 Td (interfaces. Passionate about transforming ideas into efficient digital solutions.) Tj ET
+BT /F2 12 Tf 0.12 0.20 0.34 rg 54 632 Td (EDUCATION) Tj ET
+0.24 0.38 0.78 RG 0.8 w 54 625 m 558 625 l S
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 609 Td (Master of Computer Applications \(MCA\) - NMIT, Bengaluru \(2025 - 2027\)) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 596 Td (Bachelor of Computer Applications \(BCA\) - KNU, Asansol \(2022 - 2025\)) Tj ET
+BT /F2 12 Tf 0.12 0.20 0.34 rg 54 571 Td (SKILLS) Tj ET
+0.24 0.38 0.78 RG 0.8 w 54 564 m 558 564 l S
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 548 Td (Frontend: React, Vite, JavaScript, HTML, CSS, Tailwind CSS) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 535 Td (Programming: Python, Java, SQL) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 522 Td (Data Science & ML: Scikit-Learn, Pandas, NumPy, Machine Learning \(ExtraTreesClassifier\)) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 509 Td (Databases & Tools: Git, VS Code, SQLite, MySQL, Oracle) Tj ET
+BT /F2 12 Tf 0.12 0.20 0.34 rg 54 484 Td (PROJECTS & EXPERIENCE) Tj ET
+0.24 0.38 0.78 RG 0.8 w 54 477 m 558 477 l S
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 461 Td (Bone Density Imbalance Analysis: Independently analyzed structured clinical data \(calcium, weight,) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 448 Td (vitamin D\) and implemented ExtraTreesClassifier.) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 435 Td (AI Medical Report Interpretation: AI/NLP system to interpret medical reports. Role: Frontend) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 422 Td (Developer \(React, Vite\).) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 409 Td (Personal Portfolio: Built a responsive portfolio website with React and Vite. Role: Frontend) Tj ET
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 396 Td (Developer.) Tj ET
+BT /F2 12 Tf 0.12 0.20 0.34 rg 54 371 Td (LANGUAGES) Tj ET
+0.24 0.38 0.78 RG 0.8 w 54 364 m 558 364 l S
+BT /F1 9.5 Tf 0.16 0.22 0.29 rg 54 348 Td (Hindi \(Native\), English \(Fluent\), Bengali \(Speaking\).) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3036
+%%EOF
