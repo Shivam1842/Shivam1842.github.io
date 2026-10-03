@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import {
-	ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Braces, BriefcaseBusiness,
-	Check, Code2, Database, Download, ExternalLink, GraduationCap, Languages, Mail,
+	ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Braces,
+	Check, Code2, Database, Download, ExternalLink, GraduationCap, Mail,
 	MapPin, Menu, Moon, Phone, Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react'
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+import Resume from './Resume.jsx'
 import './App.css'
 
 const navigation = [
@@ -235,32 +236,11 @@ function ProjectsSection() {
 	)
 }
 
-function ResumeArtwork() {
-	return (
-		<div className="resume-art anti-gravity" aria-hidden="true">
-			<div className="resume-paper"><div className="resume-paper-header"><span>SK</span><i>PROFILE / 2026</i></div><strong>Shivam<br />Kumar Singh<span>.</span></strong><small>MCA · DATA SCIENCE · WEB</small><div className="resume-rule" /><div className="resume-paper-row"><i /><i /><i /></div><div className="resume-paper-row short"><i /><i /></div><div className="resume-paper-row"><i /><i /><i /></div><div className="resume-paper-foot"><span>LET’S BUILD</span><span>01 — 01</span></div></div>
-			<div className="resume-orbit" /><span className="resume-stamp">OPEN<br />TO WORK</span>
-		</div>
-	)
-}
-
 function ResumeSection() {
-	const summary = [
-		{ icon: GraduationCap, label: 'Education', value: 'MCA · NMIT Bengaluru' },
-		{ icon: BriefcaseBusiness, label: 'Experience', value: 'Fresher · Open to opportunities' },
-		{ icon: Code2, label: 'Focus', value: 'Web Development · Data Science · Python · Java' },
-		{ icon: Languages, label: 'Languages', value: 'Hindi (Native) · English (Fluent)' },
-	]
-
 	return (
 		<section className="section resume-contact-section" id="resume">
 			<div className="page-width resume-contact-grid">
-				<div className="resume-panel">
-					<SectionHeading eyebrow="THE SHORT VERSION">A little on paper</SectionHeading>
-					<div className="resume-summary" id="resume-details">{summary.map(({ icon: Icon, label, value }) => <div className="resume-row" key={label}><Icon size={16} /><div><span className="text-slate-700 dark:text-zinc-400">{label}</span><strong className="text-slate-700 dark:text-zinc-400">{value}</strong></div></div>)}</div>
-					<div className="resume-actions"><button className="button button-primary bg-gradient-to-r from-blue-700 to-purple-700 text-white dark:from-blue-400 dark:to-purple-500" onClick={() => window.print()}><Download size={15} /> Download PDF</button><a className="button button-outline gradient-outline from-blue-700 to-purple-700 text-slate-900 hover:text-blue-700 dark:from-blue-400 dark:to-purple-500 dark:text-white dark:hover:text-blue-400" href="#resume-details">View Online <ArrowUpRight size={15} /></a></div>
-					<ResumeArtwork />
-				</div>
+				<Resume />
 				<ContactSection />
 			</div>
 		</section>
@@ -284,7 +264,7 @@ function ContactSection() {
 			<p className="contact-intro text-slate-700 dark:text-zinc-400">I’m always open to new opportunities, collaborations or just a friendly hello!</p>
 			<div className="contact-methods">
 				<a className="text-slate-800 dark:text-zinc-300" href="mailto:shivam231806@gmail.com"><span><Mail size={16} /></span><small className="text-slate-700 dark:text-zinc-400">EMAIL</small><strong className="text-slate-800 dark:text-zinc-300">shivam231806@gmail.com</strong><ArrowUpRight size={14} /></a>
-				<div><span><Phone size={16} /></span><small className="text-slate-700 dark:text-zinc-400">PHONE</small><strong className="text-slate-800 dark:text-zinc-300">Available on request</strong></div>
+				<a className="text-slate-800 dark:text-zinc-300" href="tel:+917601890338"><span><Phone size={16} /></span><small className="text-slate-700 dark:text-zinc-400">PHONE</small><strong className="text-slate-800 dark:text-zinc-300">+91 7601890338</strong><ArrowUpRight size={14} /></a>
 				<div><span><MapPin size={16} /></span><small className="text-slate-700 dark:text-zinc-400">LOCATION</small><strong className="text-slate-800 dark:text-zinc-300">Asansol, West Bengal, India</strong></div>
 			</div>
 			<SocialLinks className="contact-socials" />
