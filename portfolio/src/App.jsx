@@ -5,7 +5,7 @@ import {
 	Check, Code2, Database, Download, ExternalLink, GraduationCap, Mail,
 	MapPin, Menu, Moon, Phone, Send, Sparkles, Sun, Terminal, X,
 } from 'lucide-react'
-import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6'
 import Resume from './Resume.jsx'
 import './App.css'
 
@@ -19,7 +19,6 @@ const navigation = [
 const socialLinks = [
 	{ label: 'GitHub', href: 'https://github.com/Shivam1842', icon: FaGithub },
 	{ label: 'LinkedIn', href: 'https://linkedin.com/in/shivam-singh-it', icon: FaLinkedinIn },
-	{ label: 'X', href: 'https://x.com', icon: FaXTwitter },
 ]
 
 const skillGroups = [
